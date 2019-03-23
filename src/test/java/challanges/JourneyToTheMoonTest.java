@@ -147,4 +147,14 @@ public class JourneyToTheMoonTest {
         assertEquals(calculatePairsCount(5, pairs), 4);
         assertEquals(calculatePairsCount(14, pairs), 85);
     }
+
+    @Test
+    void givenThreePairsAndTwoOfThemAreFromOneCountry_returnsSix() {
+        int[][] pairs = {
+            { 0, 1 },
+            { 0, 2 },
+            { 3, 4 },
+        };
+        assertEquals(calculatePairsCount(5, pairs), 6);
+    }
 }
