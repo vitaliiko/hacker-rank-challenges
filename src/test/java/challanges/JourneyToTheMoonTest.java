@@ -97,4 +97,54 @@ public class JourneyToTheMoonTest {
         assertEquals(calculatePairsCount(7, pairs), 18);
         assertEquals(calculatePairsCount(16, pairs), 117);
     }
+
+    @Test
+    void givenThreeAstronautsAndTwoPairs_returnsZero() {
+        int[][] pairs = {
+            { 0, 1 },
+            { 0, 2 },
+        };
+        assertEquals(calculatePairsCount(3, pairs), 0);
+    }
+
+    @Test
+    void givenFourAstronautsAndTwoPairsFromOneCountry_returnsThree() {
+        int[][] pairs = {
+            { 0, 1 },
+            { 0, 2 },
+        };
+        assertEquals(calculatePairsCount(4, pairs), 3);
+    }
+
+    @Test
+    void givenNAstronautsAndTwoPairsFromOneCountry_returnsAllPossiblePairs() {
+        int[][] pairs = {
+            { 0, 1 },
+            { 0, 2 },
+        };
+        assertEquals(calculatePairsCount(5, pairs), 7);
+        assertEquals(calculatePairsCount(6, pairs), 12);
+        assertEquals(calculatePairsCount(13, pairs), 75);
+    }
+
+    @Test
+    void givenFourAstronautsAndThreePairs_returnsZero() {
+        int[][] pairs = {
+            { 0, 1 },
+            { 0, 2 },
+            { 0, 3 },
+        };
+        assertEquals(calculatePairsCount(4, pairs), 0);
+    }
+
+    @Test
+    void givenNAstronautsAndThreePairsFromOneCountry_returnsAllPossiblePairs() {
+        int[][] pairs = {
+            { 0, 1 },
+            { 0, 2 },
+            { 0, 3 },
+        };
+        assertEquals(calculatePairsCount(5, pairs), 4);
+        assertEquals(calculatePairsCount(14, pairs), 85);
+    }
 }
